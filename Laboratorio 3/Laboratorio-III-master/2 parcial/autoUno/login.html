@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet"
+        href="./lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet"
+        href="./lib/bootstrapvalidator/dist/css/bootstrapValidator.css"
+        />
+    <script type="text/javascript"
+        src="./lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript"
+        src="./lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript"
+        src="./lib/bootstrapvalidator/dist/js/bootstrapValidator.min.js"></script>
+        <script type="text/javascript" src="./frontend/login.js"></script>
+        <script src="./frontend/loginValidator.js"></script>
+                <script src="./frontend/registro.js"></script>
+
+    </head>
+    <body style="background-color: lightpink;">
+        <div style="position:absolute;right: 0;" class="container">
+            <br>
+            <form id="loginForm" method="post" class="form-horizontal" style="background-color: lightgrey;" style="width: 690px;margin-top: 10%">
+    
+                <div class="form-group" style="background-color: darkblue;color: white;width: 680px;text-align:center;">
+                  <label class="control-label"><h3>INGRESO</h3></label>
+                </div>
+                <div class="form-group">
+                    <br>
+                </div>
+                <div class="form-group" style="width: 150%">
+                    <label class="col-md-2 control-label">E-Mail</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input id = "email" name="usuario" placeholder="Ingrese correo" class="form-control" type="email">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="form-group" style="width: 150%">
+                    <label class="col-md-2 control-label">Contrase&ntilde;a</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group" >
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+                            <input id = "clave" name="password" class="form-control" type="password" placeholder="Ingrese contrase&ntilde;a">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <br>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label"></label>
+                    <div class="col-md-4">
+                        <button style = "width: 110%" type="button" class="btn btn-success" onclick="Validar()">Aceptar <span class="glyphicon glyphicon-send"></span></button>
+                    </div>
+                    <label class="col-md-1 control-label"></label>
+                    <div class="col-md-4">
+                        <button style = "width: 55%" type="reset" class="btn btn-primary">Limpiar</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <a href = "" data-toggle="modal" data-target="#myModal">Nuevo en la p&aacute;gina?.Registrate!</a>
+                </div>
+                <div class="alert alert-danger alert-dismissable" id = "errorLogin" hidden>
+                </div>
+    
+            </form>
+            
+        </div>
+        <div class="container">
+            <div id="myModal" class="modal fade" role="dialog">
+           
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header fondo" style="background-color: darkblue;color:white;text-align:center;">
+                            <button type="button" class="close" data-dismiss="modal" style="color:white">&times;</button>
+                            <h3 class="modal-title">NUEVO REGISTRO</h3>
+                            
+                            
+                        </div>
+                        <div class="modal-body">
+                            <form id="registroForm" method="post" class="form-horizontal">
+                
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Apellido</label>
+                                    <div class="col-md-4 inputGroupContainer" style="width: 60%">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                            <input name="apellido" id = "apellido" class="form-control" type="text" placeholder="Ingrese su apellido">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Nombre</label>
+                                    <div class="col-md-4 inputGroupContainer" style="width: 60%">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                            <input name="nombre" id = "nombre" class="form-control" type="text" placeholder="Ingrese su nombre">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">E-Mail</label>
+                                    <div class="col-md-4 inputGroupContainer" style="width: 60%">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class= "glyphicon glyphicon-envelope"></i></span>
+                                            <input name="email"  id = "email2" placeholder="Ingrese email" class="form-control" type="email">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Perfil</label>
+                                    <div class="col-md-4 inputGroupContainer" style="width: 60%">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class= "glyphicon glyphicon-option-horizontal"></i></span>
+                                            <select name="perfil" id="perfil" style="width: 100%;" class="form-control">
+                                                <option value="">Seleccione</option>
+                                                <option value="empleado">Empleado</option>
+                                                <option value="encargado">Encargado</option>
+                                                <option value="propietario">Propietario</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Foto</label>
+                                    <div class="col-md-4 inputGroupContainer" style="width: 60%">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class= "glyphicon glyphicon-camera"></i></span>
+                                            <input id="foto"  name = "imgFoto" type="file" class="form-control">
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Contrase&ntilde;a</label>
+                                    <div class="col-md-4 inputGroupContainer" style="width: 60%">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                            <input name="clave" id = "clave2" class="form-control" type="password" placeholder="Ingrese contrase&ntilde;a">
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Confirmar</label>
+                                    <div class="col-md-4 inputGroupContainer" style="width: 60%">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                            <input name="confirmClave" class="form-control" type="password" placeholder="Repetir contrase&ntilde;a">
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <br>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label"></label>
+                                    <div class="col-md-4">
+                                        <button  id = "btnCargar"  style = "width: 110%" type="button" class="btn btn-success" onclick = "Registrar()">Enviar<span class="glyphicon glyphicon-send"></span></button>
+                                    </div>
+                                    <label class="col-md-1 control-label"></label>
+                                    <div class="col-md-4">
+                                        <button style = "width: 55%" type="reset" class="btn btn-primary">Limpiar</button>
+                                    </div>
+                                </div>
+                                <div class="alert alert-danger alert-dismissable" id = "errorRegistro" hidden>
+                                    
+                                </div>
+                               
+                    
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "test",
+  "description": "test",
+  "main": "asd",
+  "authors": [
+    "as"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+
+  "dependencies": {
+    "bootstrap":"latest",
+    "jquery":"latest"
+  }
+}

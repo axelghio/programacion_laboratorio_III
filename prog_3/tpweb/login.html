@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap 4 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="front/style.css">
+
+    <!-- JS -->
+    <script src="./javascript/validaciones.js"></script>
+    <!-- Titulo de la pag. -->
+    <title>HTML 5 – Formulario Login</title>
+</head>
+<body>
+    <h2 class="page-header">Login</h2>
+    <div class="container">
+        <h4 style="padding-top:2em;">Ingreso de credenciales</h4>
+        <div class="row">
+            <div class="col-md-6">
+                <form class="was-validated" id="form" action="./backend/verificarUsuario.php" method="POST">
+                    <div class="form-group">
+                        <label for="dni">DNI:</label>
+                        <input type="text" class="form-control" id="dni" placeholder="Ingresar DNI" name="txtDni"
+                            required>
+                        <div class="valid-feedback">Válido.</div>
+                        <div class="invalid-feedback">Valor requerido.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" class="form-control" id="apellido" placeholder="Ingresar Apellido"
+                            name="txtApellido" required>
+                        <div class="valid-feedback">Válido.</div>
+                        <div class="invalid-feedback">Valor requerido.</div>
+                    </div>
+                    <input type="submit" id="formData" class="btn btn-dark" name="guardarLogin" value="Enviar" onclick="AdministrarValidacionesLogin()">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

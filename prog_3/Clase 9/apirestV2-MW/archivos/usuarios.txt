@@ -1,0 +1,4 @@
+juan;123
+pedro;321
+invitado;000
+admin;666

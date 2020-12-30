@@ -1,0 +1,7 @@
+{
+	"name": "apirestV2-MW_ejercicios",
+	"description": "ejercicios con ApiRest y middleware",
+	"require":{
+		"slim/slim": "^3.0"
+	}
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="bower_components/bootstrap4/dist/css/bootstrap.min.css">
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="js/enumerados.js"></script>
+    <script src="js/personaje.js"></script>
+    <script src="js/heroe.js"></script>
+    <script src="js/app.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="" style="background-color:powderblue">
+
+        <h1 class="">ABM Heroes</h1>
+        <hr>
+
+        
+
+            <br>
+            <div class="">
+                <label for="txtId" class="">Id: </label>
+                <div class="">
+                    <input type="text" name="" id="txtId" class="">
+                </div>
+            </div>
+
+            <div class="">
+                <label for="txtNombre" class="">Nombre:</label>
+                <div class="">
+                    <input type="text" name="" id="txtNombre" class="">
+                </div>
+            </div>
+
+
+            <div class="">
+                <label for="" class="">Edad: </label>
+                <div class="">
+                    <input type="text" name="" id="txtEdad" class="">
+                </div>
+            </div>
+            <br>
+            <div class="">
+
+                <label for="" class="">Tipo: </label>
+                <div class="">
+                    <select name="" id="selectTipo" class="">
+                        
+                    </select>
+                </div>
+
+                <label for="" class="">Poder Principal: </label>
+                <div class="">
+                    <input name="" id="txtPoder" class="">
+                </div>
+
+            </div>
+            <br>
+            <div class="">
+
+                <div class="">
+                    <button id="btnAgregar" onclick="agregarHeroe()" class="">Agregar</button>
+                </div>
+                <div class="">
+                    <button id="btnModificar" class="">Modificar</button>
+                </div>
+                <div class="">
+                    <button id="btnEliminar" class="">Eliminar</button>
+                </div>
+                <div class="">
+                    <button id="btnClearStorage" onclick="cleanStorage()" class="">Limpiar LocalStorage</button>
+                </div>
+
+            </div>
+
+            <hr>
+            <h2 class="">Filtros</h2>
+            <hr>
+
+            <div class="">
+
+                <label for="cmbFiltro" class="">Filtrar por:</label>
+                <div class="">
+                    <select name="" id="cmbFiltro"></select>
+                </div>
+
+                <label for="txtPromedio" class="">Promedio de edad:</label>
+                <div class="">
+                    <input type="text" id="txtPromedio" style="width:50px" readonly>
+                </div>
+                <div class="">
+                    <button onclick="calcularPromedio()" class="">Calcular Promedio</button>
+                </div>
+            </div>
+            <br>
+
+            <h3>Campos mostrados
+                <small>Tildar los campos a mostrar</small>
+            </h3>
+            <hr>
+            <div class="">
+                <input type="checkbox" id="chkId" class="" checked>
+                <label for="chkId" class=""> Id </label>
+            </div>
+            <div class="">
+                <input type="checkbox" id="chkName" class="" checked>
+                <label for="chkName" class="form-check-label"> Nombre </label>
+            </div>
+            <div class="">
+                <input type="checkbox" id="chkEdad" class="" checked>
+                <label for="chkEdad" class=""> Edad: </label>
+            </div>
+            <div class="">
+                <input type="checkbox" id="chkPoder" class="" checked>
+                <label for="chkPoder" class=""> Poder </label>
+            </div>
+
+            <hr>
+            <h2 class="">Lista de Heroes</h2>
+            <hr>
+
+            <div id="divTabla" class="">
+
+            </div>
+
+    
+
+    </div>
+
+</body>
+
+</html>

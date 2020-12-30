@@ -1,0 +1,24 @@
+programacion:
+
+PHP MyAdmin: https://drive.google.com/file/d/1bCygweGmFjxQC9f9wRW4fSthIZAB0vGiview?usp=sharing
+
+pdo: https://drive.google.com/file/d/1C-JHHrKWvpRODnRnqMy0qImhocx0Z2tH/view?usp=sharing
+
+COMPOSER:  https://drive.google.com/file/d/1S656Jlk8w1cDLxKnnVFvkrGqU1De-RCm/view?usp=sharing
+
+api rest - slim: https://drive.google.com/file/d/1TqyxIBKneV51J5u_FmG3pvn_eGvvmFb1/view?usp=sharing
+
+middleware parte 1: https://drive.google.com/file/d/1Op4P9ueF0fBZKyehfpVf2KIGEM6g_Oi8/view?usp=sharing
+middleware parte 2: https://drive.google.com/file/d/1Vv3X-c2fCiZdFfR_-cY9BXuU33FKpvT2/view?usp=sharing
+
+Laboratorio:
+
+AJAX: https://drive.google.com/file/d/1_fhT2Chttmv3WHcK_hHfFEEIpeIi9ORA/view?usp=sharing
+
+JSON: https://drive.google.com/file/d/1S6IOV1NApICYpbciSCDCSRQXDxzCzN2F/view?usp=sharing
+
+JQUERY: https://drive.google.com/file/d/1S1mpvKjoZgv5WzVHpeqsnwDu-8bYibcp/view?usp=sharing
+
+CSS: https://drive.google.com/file/d/1n6D1cRDUcauzIjc2aJg8nQ8Zzc7-Nd5n/view?usp=sharing
+
+bootstrap: https://drive.google.com/file/d/1NiYPD6b5Ic3FGz_48Or4UT1LaTd7Mhhj/view?usp=sharing

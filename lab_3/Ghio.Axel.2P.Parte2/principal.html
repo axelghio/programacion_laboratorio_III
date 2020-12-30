@@ -1,0 +1,169 @@
+    <!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="./frontend/principal.js"></script>
+        
+    </head>
+    <body style="height:1500px;background-color: lightblue;">
+        <div class="container-fluid" style="margin-top:30px">
+
+            <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+    
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" style="color:rgb(32, 138, 255);" href="#" id="navbardrop" data-toggle="dropdown">
+                                Listados <b class="caret"></b>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" onclick="Usuario()">Usuarios</a>
+                                <a class="dropdown-item" onclick="Barbijos()">Barbijos</a>
+                            </div>  
+                        </li>
+                        <li class="container">
+                            <button type="button" class="btn btn-link" style="color:rgb(32, 138, 255);" onclick="AltaBarbijo()">Alta Barbijos</button>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <h5 style="padding-top:6em;"></h5>
+            <div class="container-fluid">
+                <div class="row" style="margin: 5px; height: 600px;">
+                    <div class="col-sm-6" style="background-color:#dc3545">
+                        <h5 style="padding-top:1em;"></h5>
+                        <div class="contrainer" id="TablaBarbijos">
+                        </div>
+                        <!--REGISTO Barbijos-->
+                        <div class="container-fluid" id="register-barbijos" style="display: none;">
+                            <div class="container">
+                                <div class="col-md-8">
+                                    <form class="well form-horizontal" id="altaForm" method="POST" enctype="multipart/form-data" style="background-color: darkcyan;">
+                                        <div class="form-group">
+                                            <!-- Color -->
+                                            <h5 style="padding-top:1em;"></h5>
+                                            <div class="col-md-12 inputGroupContainer">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class= "glyphicon glyphicon-envelope"></i>
+                                                    </span>
+                                                    <input name="ColorBarbijo"  id="colorBarbijo" placeholder="Color" class="form-control" type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <!-- Tipo -->
+                                            <h5 style="padding-top:1em;"></h5>
+                                            <div class="col-md-12 inputGroupContainer">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class= "glyphicon glyphicon-envelope"></i>
+                                                    </span>
+                                                    <input name="TipoBarbijo"  id="tipoBarbijo" placeholder="Modelo" class="form-control" type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <!-- Precio -->
+                                            <h5 style="padding-top:1em;"></h5>
+                                            <div class="col-md-12 inputGroupContainer">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class= "glyphicon glyphicon-envelope"></i>
+                                                    </span>
+                                                    <input name="PrecioBarbijo"  id="precioBarbijo" placeholder="Precio" class="form-control" type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" align="center">
+                                            <div class="row">
+                                                <label class="control-label col-lg-1"></label>
+                                                <button id="btnCargar" type="button" class="btn btn-primary btn-lg col-md-4" onclick="RegistrarBarbijo()">Agregar</button>
+                                                <label class="control-label col-lg-2"></label>
+                                                <button  type="reset" class="btn btn-warning btn-lg col-md-4">Limpiar</button>
+                                            </div>
+                                            <h5 style="padding-top:1em;"></h5>
+                                        </div>
+                                        <div class="alert alert-danger alert-dismissable" id = "errorRegistro" hidden></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6" style="background-color: #28a745">
+                        <h5 style="padding-top:1em;"></h5>
+                        <div class="contrainer" id="TablaUsuario">
+                        </div>
+                        <!--Modificar Barbijo-->
+                        <div class="container-fluid" id="modificar-barbijos" style="display: none;">
+                            <div class="container">
+                                <div class="col-md-8">
+                                    <form class="well form-horizontal" id="altaForm" method="POST" enctype="multipart/form-data" style="background-color: darkcyan;">
+                                        <div class="form-group">
+                                            <!-- Color -->
+                                            <h5 style="padding-top:1em;"></h5>
+                                            <div class="col-md-12 inputGroupContainer">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class= "glyphicon glyphicon-envelope"></i>
+                                                    </span>
+                                                    <input name="ColorBarbijo"  id="modColorBarbijo" placeholder="Color" class="form-control" type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <!-- Tipo -->
+                                            <h5 style="padding-top:1em;"></h5>
+                                            <div class="col-md-12 inputGroupContainer">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class= "glyphicon glyphicon-envelope"></i>
+                                                    </span>
+                                                    <input name="TipoBarbijo"  id="modTipoBarbijo" placeholder="Tipo" class="form-control" type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <!-- Precio -->
+                                            <h5 style="padding-top:1em;"></h5>
+                                            <div class="col-md-12 inputGroupContainer">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class= "glyphicon glyphicon-envelope"></i>
+                                                    </span>
+                                                    <input name="PrecioBarbijo"  id="modPrecioBarbijo" placeholder="Precio" class="form-control" type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" align="center">
+                                            <div class="row">
+                                                <label class="control-label col-lg-1"></label>
+                                                <button id="btnModCargar" type="button" class="btn btn-primary btn-lg col-md-4" onclick="">Modificar</button>
+                                                <label class="control-label col-lg-2"></label>
+                                                <button  type="reset" class="btn btn-warning btn-lg col-md-4">Limpiar</button>
+                                            </div>
+                                            <h5 style="padding-top:1em;"></h5>
+                                        </div>
+                                        <div class="alert alert-danger alert-dismissable" id = "errorRegistro" hidden></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+            </div>
+        </div>
+        <h5 style="padding-top:1em;"></h5>
+        <div class="alert alert-success" id="promedioPrecios" style="display: none;">
+            
+        </div>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "usuarios",
+  "authors": [
+    "rosasthomas <rosasthomas@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "bootstrapValidator": "latest",
+    "jquery":"latest"
+  }
+}

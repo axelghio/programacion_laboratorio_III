@@ -1,0 +1,21 @@
+div.error{
+    background : rgb(229, 150, 150);
+    color: white;
+    font-size: 50pt;
+    border : solid;
+    border-color : red;
+    border-width : 1;
+    padding-top: middle;
+    visibility: visible;
+}
+
+div.entro{
+    background : rgb(147, 207, 147);
+    color: white;
+    font-size: 50pt;
+    border : solid;
+    border-color : rgb(0, 255, 0);
+    border-width : 1;
+    padding-top: middle;
+    visibility: visible;
+}
